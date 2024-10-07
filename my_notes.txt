@@ -1,0 +1,37 @@
+# Función para escribir notas en un archivo de texto
+def write_notes(filename):
+    """
+    Esta función crea (o sobreescribe) un archivo de texto y escribe notas en él.
+
+    :param filename: Nombre del archivo donde se guardarán las notas.
+    """
+    # Abrimos el archivo en modo escritura ('w').
+    with open(filename, 'w') as file:
+        # Escribimos varias líneas de notas en el archivo.
+        file.write("Nota 1: Estudiar para el examen de biología.\n")  # Primera nota
+        file.write("Nota 2: Completar el trabajo de historia.\n")    # Segunda nota
+        file.write("Nota 3: Preparar la presentación para el viernes.\n")  # Tercera nota
+        file.write("Nota 4: Ir al gimnasio el sábado.\n")            # Cuarta nota
+
+# Función para leer y mostrar notas de un archivo de texto
+def read_notes(filename):
+    """
+    Esta función lee un archivo de texto y muestra su contenido línea por línea.
+
+    :param filename: Nombre del archivo desde donde se leerán las notas.
+    """
+    # Abrimos el archivo en modo lectura ('r').
+    with open(filename, 'r') as file:
+        # Iteramos sobre cada línea del archivo.
+        for line in file:
+            # Eliminamos saltos de línea y espacios innecesarios antes y después de la línea.
+            print(line.strip())  # Mostramos la línea en la consola.
+
+# Nombre del archivo que se utilizará para guardar las notas.
+file_name = 'my_notes.txt'
+
+# Llamamos a la función para escribir notas en el archivo.
+write_notes(file_name)
+
+# Llamamos a la función para leer las notas desde el archivo y mostrarlas en consola.
+read_notes(file_name)
